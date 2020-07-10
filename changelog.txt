@@ -1,4 +1,7 @@
+Build 2020-07-10 15:59
+======================
+  - Added a config option to change the charge duration.
+
 Build 2020-07-10 13:50
 ======================
-
-- Made TNT explode instantly after getting placed.
+  - Made TNT get charged immediately after getting placed.
