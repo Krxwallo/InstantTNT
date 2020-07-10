@@ -9,9 +9,7 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/instant-tnt/issues
     # (in the root of the mod JAR)
     #logoFile="instant_tnt.png" #optional
     authors="justAm0dd3r" #optional
-    description='''
-This mod makes tnt automatically explode when placed.
-'''
+    description='''This mod makes tnt automatically explode when placed.'''
 
 [[dependencies.instant_tnt]]
     modId="forge"
