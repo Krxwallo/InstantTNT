@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+version = '1.1.0'
 group = 'com.justAm0dd3r.instant_tnt' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'instant_tnt-1.16.1'
 
