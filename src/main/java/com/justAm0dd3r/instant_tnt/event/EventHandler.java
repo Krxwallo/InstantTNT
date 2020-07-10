@@ -23,25 +23,35 @@ public class EventHandler {
     public static void onBlockPlace(BlockEvent.EntityPlaceEvent evt) {
         if (evt.getPlacedBlock().getBlock() instanceof TNTBlock && evt.getEntity() instanceof PlayerEntity) {
             // Is a tnt block.
-            TNTBlock tntBlock = (TNTBlock) evt.getPlacedBlock().getBlock();
-            // Remove it
-            tntBlock.removedByPlayer(evt.getPlacedBlock(),
-                    evt.getWorld().getWorld(), evt.getPos(), (PlayerEntity)evt.getEntity(), false, Fluids.EMPTY.getDefaultState());
-            World worldIn = evt.getWorld().getWorld();
-            BlockPos pos = evt.getPos();
-            TNTEntity tntEntity = null;
-            if (!worldIn.isRemote) {
-                // Create a tnt entity.
-                tntEntity = new TNTEntity(worldIn, (double)pos.getX() + 0.5D, pos.getY(),
-                        (double)pos.getZ() + 0.5D, null);
-                // Set the charge duration.
-                tntEntity.setFuse((int)(Config.COMMON.tntChargeDuration.get() * 10));
-                worldIn.addEntity(tntEntity);
-                worldIn.playSound(null, tntEntity.getPosX(), tntEntity.getPosY(), tntEntity.getPosZ(),
-                        SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            if (!evt.getEntity().isSneaking()) {
+                TNTBlock tntBlock = (TNTBlock) evt.getPlacedBlock().getBlock();
+                // Remove it
+                tntBlock.removedByPlayer(evt.getPlacedBlock(),
+                        evt.getWorld().getWorld(), evt.getPos(), (PlayerEntity) evt.getEntity(), false, Fluids.EMPTY.getDefaultState());
+                World worldIn = evt.getWorld().getWorld();
+                BlockPos pos = evt.getPos();
+                TNTEntity tntEntity = null;
+                if (!worldIn.isRemote) {
+                    // Create a tnt entity at the position where the tnt block was.
+                    tntEntity = new TNTEntity(worldIn, (double) pos.getX() + 0.5D, pos.getY(),
+                            (double) pos.getZ() + 0.5D, null);
+                    // Set the charge duration.
+                    tntEntity.setFuse((int) (Config.COMMON.tntChargeDuration.get() * 10));
+
+                    // Add the entity to the world.
+                    worldIn.addEntity(tntEntity);
+
+                    // Play the charge sound.
+                    worldIn.playSound(null, tntEntity.getPosX(), tntEntity.getPosY(), tntEntity.getPosZ(),
+                            SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                }
+                if (tntEntity == null) LOGGER.warn("tntEntity is null.");
+                else LOGGER.debug("Charged TNT. Charge Duration: " + (int) (Config.COMMON.tntChargeDuration.get() * 10) + " seconds");
             }
-            if (tntEntity == null) LOGGER.warn("tntEntity is null.");
-            else LOGGER.debug("Made TNT catch fire.");
+            else {
+                // Player is sneaking. -> Ignore placing of tnt.
+                LOGGER.debug("The Player is sneaking. Ignoring tnt.");
+            }
         }
     }
 }
