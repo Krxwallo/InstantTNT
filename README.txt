@@ -1,3 +1,14 @@
+InstantTNT Mod
+--------------
+
+Author: justAm0dd3r
+Mod ID: instant-tnt
+Minecraft Version: 1.16.1
+Website: https://www.curseforge.com/minecraft/mc-mods/instant-tnt
+
+================================================================================
+Everything below this line is the default README.txt from forge:
+
 -------------------------------------------
 Source installation information for modders
 -------------------------------------------
