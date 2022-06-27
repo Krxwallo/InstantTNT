@@ -23,7 +23,6 @@ public class EventHandler {
         if (evt.getPlacedBlock().getBlock() instanceof TntBlock && evt.getEntity() instanceof Player) {
             // Is a tnt block.
             if (!evt.getEntity().isCrouching()) {
-                TntBlock tntBlock = (TntBlock) evt.getPlacedBlock().getBlock();
                 var server = evt.getWorld().getServer();
                 if (server == null) {
                     LOGGER.error("Server is null in onBlockPlace event.");
