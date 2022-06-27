@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[32,)"
+loaderVersion="[37,)"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/instant-tnt/issues"
 [[mods]]
     modId="instant_tnt"
@@ -14,12 +14,12 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/instant-tnt/issues
 [[dependencies.instant_tnt]]
     modId="forge"
     mandatory=true
-    versionRange="[32,)"
+    versionRange="[37,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.instant_tnt]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.1]"
+    versionRange="[1.17, 1.18)"
     ordering="NONE"
     side="BOTH"
