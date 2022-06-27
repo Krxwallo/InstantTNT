@@ -4,6 +4,7 @@ import com.justAm0dd3r.instant_tnt.config.Config;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.TntBlock;
@@ -37,7 +38,7 @@ public class EventHandler {
                 if (!world.isClientSide) {
                     // Create a tnt entity at the position where the tnt block was.
                     tntEntity = new PrimedTnt(world, (double) pos.getX() + 0.5D, pos.getY(),
-                            (double) pos.getZ() + 0.5D, null);
+                            (double) pos.getZ() + 0.5D, (LivingEntity) evt.getEntity());
                     // Set the charge duration.
                     tntEntity.setFuse((int) (Config.COMMON.tntChargeDuration.get() * 10));
 
@@ -49,7 +50,7 @@ public class EventHandler {
                             SoundEvents.TNT_PRIMED, SoundSource.BLOCKS, 1.0F, 1.0F);
                 }
                 if (tntEntity == null) LOGGER.warn("tntEntity is null.");
-                else LOGGER.debug("Charged TNT. Charge Duration: " + (int) (Config.COMMON.tntChargeDuration.get() * 10) + " seconds");
+                else LOGGER.debug("Charged TNT. Charge Duration: " + Config.COMMON.tntChargeDuration.get() + " seconds");
             }
             else {
                 // Player is sneaking. -> Ignore placing of tnt.
