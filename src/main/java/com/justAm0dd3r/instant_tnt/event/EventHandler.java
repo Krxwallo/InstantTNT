@@ -6,8 +6,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.TntBlock;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -30,8 +30,8 @@ public class EventHandler {
                 }
                 var world = server.overworld();
                 // Remove it
-                tntBlock.removedByPlayer(evt.getPlacedBlock(),
-                        world, evt.getPos(), (Player) evt.getEntity(), false, Fluids.EMPTY.defaultFluidState());
+                world.setBlockAndUpdate(evt.getPos(), Blocks.AIR.defaultBlockState());
+                //tntBlock.playerWillDestroy(world, evt.getPos(), evt.getPlacedBlock(), (Player) evt.getEntity());
                 BlockPos pos = evt.getPos();
                 PrimedTnt tntEntity = null;
                 if (!world.isClientSide) {
