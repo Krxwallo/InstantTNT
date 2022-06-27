@@ -1,6 +1,7 @@
 modLoader="javafml"
 loaderVersion="[37,)"
 issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/instant-tnt/issues"
+license="GPLv3+"
 [[mods]]
     modId="instant_tnt"
     version="${file.jarVersion}"
@@ -16,7 +17,7 @@ issueTrackerURL="https://www.curseforge.com/minecraft/mc-mods/instant-tnt/issues
     mandatory=true
     versionRange="[37,)"
     ordering="NONE"
-    side="BOTH"
+    side="SERVER"
 [[dependencies.instant_tnt]]
     modId="minecraft"
     mandatory=true

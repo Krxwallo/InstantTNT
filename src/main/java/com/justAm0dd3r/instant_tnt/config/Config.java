@@ -1,6 +1,6 @@
 package com.justAm0dd3r.instant_tnt.config;
 
-import com.justAm0dd3r.instant_tnt.reference.Reference;
+import com.justAm0dd3r.instant_tnt.InstantTNT;
 import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -12,7 +12,7 @@ public class Config {
 
         public Common(ForgeConfigSpec.Builder builder) {
             builder.comment("Instant TNT Mod Configurations")
-                   .push(Reference.MOD_ID);
+                   .push(InstantTNT.MOD_ID);
 
             tntChargeDuration = builder
                     .comment("The time until tnt explodes after it gets charged. (in seconds) (default: 8s)")
