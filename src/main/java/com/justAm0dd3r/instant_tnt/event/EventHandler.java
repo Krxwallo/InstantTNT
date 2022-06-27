@@ -39,7 +39,7 @@ public class EventHandler {
                     tntEntity = new PrimedTnt(world, (double) pos.getX() + 0.5D, pos.getY(),
                             (double) pos.getZ() + 0.5D, (LivingEntity) evt.getEntity());
                     // Set the charge duration.
-                    tntEntity.setFuse((int) (Config.COMMON.tntChargeDuration.get() * 10));
+                    tntEntity.setFuse((int) (Config.COMMON.tntChargeDuration.get() * 20));
 
                     // Add the entity to the world.
                     world.addFreshEntity(tntEntity);
