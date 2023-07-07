@@ -9,18 +9,18 @@ license="GPLv3+"
     displayURL="https://www.curseforge.com/minecraft/mc-mods/instant-tnt"
     # (in the root of the mod JAR)
     #logoFile="instant_tnt.png" #optional
-    authors="justAm0dd3r" #optional
+    authors="Krxwallo" #optional
     description='''This mod makes tnt automatically explode when placed.'''
 
 [[dependencies.instant_tnt]]
     modId="forge"
     mandatory=true
-    versionRange="[41,)"
+    versionRange="[45,)"
     ordering="NONE"
     side="SERVER"
 [[dependencies.instant_tnt]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19, 1.20)"
+    versionRange="[1.20, 1.21)"
     ordering="NONE"
     side="BOTH"

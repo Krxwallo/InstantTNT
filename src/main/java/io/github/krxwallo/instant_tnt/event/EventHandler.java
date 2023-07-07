@@ -1,6 +1,6 @@
-package com.justAm0dd3r.instant_tnt.event;
+package io.github.krxwallo.instant_tnt.event;
 
-import com.justAm0dd3r.instant_tnt.config.Config;
+import io.github.krxwallo.instant_tnt.config.Config;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -9,7 +9,7 @@ import net.minecraft.world.entity.item.PrimedTnt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.TntBlock;
-import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
@@ -23,7 +23,7 @@ public class EventHandler {
         if (evt.getPlacedBlock().getBlock() instanceof TntBlock && evt.getEntity() instanceof Player) {
             // Is a tnt block.
             if (!evt.getEntity().isCrouching()) {
-                var server = evt.getWorld().getServer();
+                var server = evt.getLevel().getServer();
                 if (server == null) {
                     LOGGER.error("Server is null in onBlockPlace event.");
                     return;

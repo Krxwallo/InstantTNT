@@ -1,6 +1,6 @@
-package com.justAm0dd3r.instant_tnt.config;
+package io.github.krxwallo.instant_tnt.config;
 
-import com.justAm0dd3r.instant_tnt.InstantTNT;
+import io.github.krxwallo.instant_tnt.InstantTNT;
 import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -15,7 +15,7 @@ public class Config {
                    .push(InstantTNT.MOD_ID);
 
             tntChargeDuration = builder
-                    .comment("The time until tnt explodes after it gets charged. (in seconds) (default: 8s)")
+                    .comment("The time until TNT explodes after it gets charged. (in seconds) (default: 8s)")
                     .worldRestart()
                     .defineInRange("tnt_charge_duration", 8f, 0f, 100f);
 

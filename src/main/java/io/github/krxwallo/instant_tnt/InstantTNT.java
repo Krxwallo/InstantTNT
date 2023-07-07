@@ -1,12 +1,12 @@
-package com.justAm0dd3r.instant_tnt;
+package io.github.krxwallo.instant_tnt;
 
-import com.justAm0dd3r.instant_tnt.config.Config;
+import io.github.krxwallo.instant_tnt.config.Config;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 
 /**
- * Author: justAm0dd3r
+ * Author: Krxwallo
  */
 @Mod(InstantTNT.MOD_ID)
 public class InstantTNT {
